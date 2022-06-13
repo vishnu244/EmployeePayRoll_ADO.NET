@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeePayRoll_ADO.Net", "EmployeePayRoll_ADO.Net.csproj", "{0C640469-604C-43A0-81B6-F735B1BBD6A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeePayRoll_ADO.Net", "EmployeePayRoll_ADO.Net.csproj", "{0C640469-604C-43A0-81B6-F735B1BBD6A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeePayRoll_ADO.NetTests", "..\EmployeePayRoll_ADO.NetTests\EmployeePayRoll_ADO.NetTests.csproj", "{117BC11E-3183-46FA-B2FC-56C46A4B73EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0C640469-604C-43A0-81B6-F735B1BBD6A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C640469-604C-43A0-81B6-F735B1BBD6A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C640469-604C-43A0-81B6-F735B1BBD6A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{117BC11E-3183-46FA-B2FC-56C46A4B73EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{117BC11E-3183-46FA-B2FC-56C46A4B73EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{117BC11E-3183-46FA-B2FC-56C46A4B73EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{117BC11E-3183-46FA-B2FC-56C46A4B73EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
