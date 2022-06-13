@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EmployeePayRoll_ADO.Net
 {
-   // C:\Users\Admin\Desktop\Vishnu\EmployeePayRoll_Service_ADO.NET\EmployeePayRoll_ADO.Net\EmployeePayRoll_ADO.Net.csproj
+    // C:\Users\Admin\Desktop\Vishnu\EmployeePayRoll_Service_ADO.NET\EmployeePayRoll_ADO.Net\EmployeePayRoll_ADO.Net.csproj
     public class EmployeeRepo
     {
         SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
@@ -107,9 +107,13 @@ namespace EmployeePayRoll_ADO.Net
             {
                 throw new Exception(e.Message);
             }
-            
+
         }
 
+        /// <summary>
+        /// Aggregate Operations
+        /// </summary>
+        /// <returns></returns>
         public int updateSalary()
         {
             SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
@@ -191,5 +195,61 @@ namespace EmployeePayRoll_ADO.Net
         }
 
 
+        ///UC_5_Retrieving all employees who have joined in aparticular date range
+
+        public void GetEmployeedetails_with_StartDate()
+        {
+            try
+            {
+                using (this.connection)
+                {
+                    string query = @"select * from EmployeeDetails where StartDate between cast('2020-01-01' as date) and CAST('2022-05-04' as date) ;";
+                    SqlCommand cmd = new SqlCommand(query, this.connection);
+
+                    this.connection.Open();
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        employee_Details.EmployeeID = dr.GetInt32(0);
+                        employee_Details.FirstName = dr.GetString(1);
+                        employee_Details.LastName = dr.GetString(2);
+                        employee_Details.Gender = dr.GetString(3);
+                        employee_Details.StartDate = dr.GetDateTime(4);
+                        employee_Details.Company = dr.GetString(5);
+                        employee_Details.Departent = dr.GetString(6);
+                        employee_Details.Address = dr.GetString(7);
+                        employee_Details.BasicPay = dr.GetInt32(8);
+                        employee_Details.Deductions = dr.GetInt32(9);
+                        employee_Details.TaxablePay = dr.GetInt32(10);
+                        employee_Details.IncomeTax = dr.GetInt32(11);
+                        employee_Details.NetPay = dr.GetInt32(12);
+
+
+                        Console.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}",
+                        employee_Details.FirstName,
+                        employee_Details.LastName,
+                        employee_Details.Gender,
+                        employee_Details.StartDate,
+                        employee_Details.Company,
+                        employee_Details.Departent,
+                        employee_Details.Address,
+                        employee_Details.BasicPay,
+                        employee_Details.Deductions,
+                        employee_Details.TaxablePay,
+                        employee_Details.IncomeTax,
+                        employee_Details.EmployeeID,
+                        employee_Details.NetPay);
+                    };
+                    dr.Close();
+                    this.connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
     }
 }

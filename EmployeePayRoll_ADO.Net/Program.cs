@@ -9,7 +9,7 @@ Employee_details employeeDetails = new Employee_details();
 
 while (true)
 {
-    Console.WriteLine("Choose the option :\n1)Create and retrieve values from Database\n3)Update salary\n6)Aggregate Operations");
+    Console.WriteLine("Choose the option :\n1)Create and retrieve values from Database\n3)Update salary\n5)Get Employee Details from a DateRange\n6)Aggregate Operations");
     int option = Convert.ToInt16(Console.ReadLine());
     switch (option)
     {
@@ -20,6 +20,9 @@ while (true)
             employeeRepo.updateSalary();
             int salary = employeeRepo.updateSalary();
             Console.WriteLine(salary);
+            break;
+        case 5:
+            employeeRepo.GetEmployeedetails_with_StartDate();
             break;
         case 6:
             int count = employeeRepo.CountOfRows();
