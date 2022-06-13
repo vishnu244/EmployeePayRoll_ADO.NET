@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace EmployeePayRoll_ADO.Net
 {
-    // C:\Users\Admin\Desktop\Vishnu\EmployeePayRoll_Service_ADO.NET\EmployeePayRoll_ADO.Net\EmployeePayRoll_ADO.Net.csproj
     public class EmployeeRepo
     {
         SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
@@ -76,9 +75,9 @@ namespace EmployeePayRoll_ADO.Net
             {
                 using (this.connection)
                 {
-                    SqlCommand command = new SqlCommand("SpAddEmployeeDetails", this.connection);
+                    SqlCommand command = new SqlCommand("SpAddEmployeeDetails1", this.connection);
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@EmployeeID", model.EmployeeID);
+                    //command.Parameters.AddWithValue("@EmployeeID", model.EmployeeID);
                     command.Parameters.AddWithValue("@FirstName", model.FirstName);
                     command.Parameters.AddWithValue("@LastName", model.LastName);
                     command.Parameters.AddWithValue("@Gender", model.Gender);

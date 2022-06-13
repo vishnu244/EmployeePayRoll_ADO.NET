@@ -9,12 +9,29 @@ Employee_details employeeDetails = new Employee_details();
 
 while (true)
 {
-    Console.WriteLine("Choose the option :\n1)Create and retrieve values from Database\n3)Update salary\n5)Get Employee Details from a DateRange\n6)Aggregate Operations");
+    Console.WriteLine("Choose the option :\n1)Create and retrieve values from Database\n2)Add Employeee Details to DataBase\n3)Update salary\n5)Get Employee Details from a DateRange\n6)Aggregate Operations");
     int option = Convert.ToInt16(Console.ReadLine());
     switch (option)
     {
         case 1:
             employeeRepo.GetEmployeedetails();
+            break;
+        case 2:
+            employeeDetails.FirstName = "Radha";
+            employeeDetails.LastName = "Krishna";
+            employeeDetails.Gender = "Male";
+            employeeDetails.StartDate = DateTime.Now;
+            employeeDetails.Company = "Amazon";
+            employeeDetails.Departent = "Marketing";
+            employeeDetails.Address = "Mumbai";
+            employeeDetails.BasicPay = 25000;
+            employeeDetails.Deductions = 1000;
+            employeeDetails.TaxablePay = 600;
+            employeeDetails.IncomeTax = 1200;
+            employeeDetails.NetPay = 35000;
+
+            employeeRepo.AddEmployee(employeeDetails);
+            Console.WriteLine("dfghj");
             break;
         case 3:
             employeeRepo.updateSalary();
