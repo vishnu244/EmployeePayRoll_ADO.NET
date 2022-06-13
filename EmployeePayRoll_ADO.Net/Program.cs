@@ -31,7 +31,7 @@ while (true)
             employeeDetails.NetPay = 35000;
 
             employeeRepo.AddEmployee(employeeDetails);
-            Console.WriteLine("dfghj");
+            Console.WriteLine("Details Inserted Successfully");
             break;
         case 3:
             employeeRepo.updateSalary();
