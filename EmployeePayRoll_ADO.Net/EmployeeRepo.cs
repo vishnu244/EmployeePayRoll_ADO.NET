@@ -134,6 +134,62 @@ namespace EmployeePayRoll_ADO.Net
 
         }
 
+        public int CountOfRows()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
+            connection.Open();
+            string query = @"Select count(*) from EmployeeDetails where Gender='FeMale';";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            object res = cmd.ExecuteScalar();
+            connection.Close();
+            int Count = (int)res;
+            return Count;
+        }
+        public int AverageOfSalary()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
+            connection.Open();
+            string query = @"Select Avg(NetPay) from EmployeeDetails where Gender='FeMale';";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            object res = cmd.ExecuteScalar();
+            connection.Close();
+            int NetPay = (int)res;
+            return NetPay;
+        }
+        public int SumOfSalary()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
+            connection.Open();
+            string query = @"Select Sum(NetPay) from EmployeeDetails where Gender='FeMale';";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            object res = cmd.ExecuteScalar();
+            connection.Close();
+            int Sum = (int)res;
+            return Sum;
+        }
+        public int MinimumOfSalary()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
+            connection.Open();
+            string query = @"Select Min(NetPay) from EmployeeDetails where Gender='FeMale';";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            object res = cmd.ExecuteScalar();
+            connection.Close();
+            int min = (int)res;
+            return min;
+        }
+        public int MaximumOfSalary()
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-7SFIPVKT; Initial Catalog=PayRollservice_ADO; Integrated Security = True; TrustServerCertificate=True;");
+            connection.Open();
+            string query = @"Select Max(NetPay) from EmployeeDetails where Gender='FeMale';";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            object res = cmd.ExecuteScalar();
+            connection.Close();
+            int max = (int)res;
+            return max;
+        }
+
 
     }
 }
