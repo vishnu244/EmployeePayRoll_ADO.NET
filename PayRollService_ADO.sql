@@ -54,7 +54,4 @@ Alter procedure [SpAddEmployeeDetails1]
 									 @IncomeTax,
 									 @NetPay)
 
-
-	
-
  End
