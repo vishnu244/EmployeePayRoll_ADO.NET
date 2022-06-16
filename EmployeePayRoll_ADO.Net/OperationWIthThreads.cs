@@ -41,18 +41,9 @@ namespace EmployeePayRoll_ADO.Net
                     DateTime StopDataTime = DateTime.Now;
                     Console.WriteLine("Duration with Thread: " + (StopDataTime - StartdateTime));
 
-
                 });
-
-
             });
-        }
-
-
-        public int EmployeeCount()
-        {
-            return this.EmployeeDetails.Count();
-        }
+        }       
 
     }
 }
