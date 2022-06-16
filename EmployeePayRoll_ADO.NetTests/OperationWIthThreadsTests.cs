@@ -25,7 +25,12 @@ namespace EmployeePayRoll_ADO.Net.Tests
             DateTime StartdateTime = DateTime.Now;
             operationWIthThreads.addEmployeeToPayRoll(employeeDetails);
             DateTime StopDataTime = DateTime.Now;
-           
+
+
+            DateTime StartdateTimeThread = DateTime.Now;
+            operationWIthThreads.addEmployeeToPayRollWithThread(employeeDetails);
+            DateTime StopDataTimeThread = DateTime.Now;
+
 
         }
 

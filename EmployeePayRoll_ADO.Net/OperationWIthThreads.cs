@@ -18,7 +18,6 @@ namespace EmployeePayRoll_ADO.Net
                 this.addEmployeePayRoll(employeeData);
                 Console.WriteLine("Employee Added :" + employeeData.FirstName);
             });
-            //Console.WriteLine(this.EmployeeDetails.ToString());
         }
 
 
@@ -43,9 +42,5 @@ namespace EmployeePayRoll_ADO.Net
             });
         }
 
-        public int EmployeeCount()
-        {
-            return this.EmployeeDetails.Count();
-        }
     }
 }
