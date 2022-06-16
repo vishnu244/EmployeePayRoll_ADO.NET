@@ -30,16 +30,28 @@ namespace EmployeePayRoll_ADO.Net
         {
             employeeDetails.ForEach((employeeData) =>
             {
-                DateTime StartdateTime = DateTime.Now;
+                Task thread = new Task(() =>
+                {
+                    DateTime StartdateTime = DateTime.Now;
 
-                Console.WriteLine("Employee being added:" + employeeData.FirstName);
-                this.addEmployeePayRoll(employeeData);
-                Console.WriteLine("Employee Added :" + employeeData.FirstName);
+                    Console.WriteLine("Employee being added:" + employeeData.FirstName);
+                    this.addEmployeePayRoll(employeeData);
+                    Console.WriteLine("Employee Added :" + employeeData.FirstName);
 
-                DateTime StopDataTime = DateTime.Now;
-                Console.WriteLine("Duration without Thread: " + (StopDataTime - StartdateTime));
+                    DateTime StopDataTime = DateTime.Now;
+                    Console.WriteLine("Duration with Thread: " + (StopDataTime - StartdateTime));
+
+
+                });
+
 
             });
+        }
+
+
+        public int EmployeeCount()
+        {
+            return this.EmployeeDetails.Count();
         }
 
     }
