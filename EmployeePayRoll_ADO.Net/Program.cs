@@ -5,6 +5,8 @@ Console.WriteLine("Welcome To Employee_Payroll ADO.NET !");
 
 EmployeeRepo employeeRepo = new EmployeeRepo();
 Employee_details employeeDetails = new Employee_details();
+OperationWIthThreads operationWIthThreads = new OperationWIthThreads();
+
 
 
 while (true)
@@ -62,12 +64,21 @@ while (true)
             employeeDetails2.Add(new Employee_details2(EmployeeID: 4, FirstName: "Viraj", LastName: "Jadhav", Gender: "Male", StartDate: DateTime.Now, Company: "bridge Labs", Departent: "Development", Address: "Pune", BasicPay: 20000, Deductions: 1000, TaxablePay: 200, IncomeTax: 180, NetPay: 25000));
             employeeDetails2.Add(new Employee_details2(EmployeeID: 5, FirstName: "Puja", LastName: "Rana", Gender: "FeMale", StartDate: DateTime.Now, Company: "bridge Labs", Departent: "Development", Address: "Delhi", BasicPay: 20000, Deductions: 1000, TaxablePay: 200, IncomeTax: 180, NetPay: 25000));
 
-            OperationWIthThreads operationWIthThreads = new OperationWIthThreads();
             DateTime StartdateTime = DateTime.Now;
             operationWIthThreads.addEmployeeToPayRoll(employeeDetails2);
             DateTime StopDataTime = DateTime.Now;
             Console.WriteLine("Duration without Thread: " + (StopDataTime - StartdateTime));
 
+
+            DateTime StartdateTimeThread = DateTime.Now;
+            operationWIthThreads.addEmployeeToPayRollWithThread(employeeDetails2);
+            DateTime StopDataTimeThread = DateTime.Now;
+            Console.WriteLine("Duration with Thread: " + (StopDataTimeThread - StartdateTimeThread));
+
+            break;
+        case 8:
+            int Count = operationWIthThreads.EmployeeCount();
+            Console.WriteLine(Count);
             break;
         default:
             Console.WriteLine("Please choose the correct option");

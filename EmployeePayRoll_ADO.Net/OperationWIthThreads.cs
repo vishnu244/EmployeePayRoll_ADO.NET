@@ -42,5 +42,10 @@ namespace EmployeePayRoll_ADO.Net
 
             });
         }
+
+        public int EmployeeCount()
+        {
+            return this.EmployeeDetails.Count();
+        }
     }
 }
